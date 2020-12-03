@@ -6,23 +6,25 @@
 */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i = 0, tmp = 0;
+	size_t a = 1;
+	size_t b;
+	int pos_1 = 0;
 
-	if (size < 2)
-		return;
-
-	while (array[i] && i < size)
+	while (a == 1)
 	{
-		if (array[i] > array[i + 1] && (array[i + 1]))
+		if (array == NULL)
+			break;
+		a = 0;
+		for (b = 0; b < size - 1; b++)
 		{
-			tmp = array[i];
-			array[i] = array[i + 1];
-			array[i + 1] = tmp;
-			if (array[i - 1])
-				i--;
-			print_array(array, size);
+			if (array[b] > array[b + 1])
+			{
+				pos_1 = array[b];
+				array[b] = array[b + 1];
+				array[b + 1] = pos_1;
+				a = 1;
+				print_array(array, size);
+			}
 		}
-		else
-			i++;
 	}
 }
